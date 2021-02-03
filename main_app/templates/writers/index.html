@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Writers</h1>
+
+{% for writer in writers %}
+<div>
+	<div>
+		<span>{{ writer.name }}</span>
+		<p>Birth: {{ writer.birth }}</p>
+		<p>Death: {{ writer.death }}</p>
+		<p>Notable Works: {{ writer.works }}</p>
+		<p>{{ writer.quote }}</p>
+	</div>
+</div>
+{% endfor %} {% endblock %}

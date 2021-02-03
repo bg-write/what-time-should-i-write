@@ -20,15 +20,11 @@
 			<nav>
 				<div>
 					<ul>
-						<li>
-							<a href="/">Home</a>
-						</li>
-					</ul>
-					<ul>
 						<!-- I'm jumping ahead in the instructions to do login, so the navbar info below will need to be messed with -->
 						{% if user.is_authenticated %}
-						<li><a href="{% url 'about' %}"></li>
-						<!-- all my other navbar links go right here -->
+						<li><a href="/">Home</a></li>
+						<li><a href="{% url 'about' %}">About</li>
+						<li><a href="/writers">View All Writers</a></li>
 						{% else %}
 						<li><a href="{% url 'signup' %}">Sign Up</a></li>
 						<li><a href="{% url 'login' %}">Log In</a></li>
