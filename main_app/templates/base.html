@@ -24,7 +24,14 @@
 						</li>
 					</ul>
 					<ul class="right">
-						<li><a href="/about">About</a></li>
+						<!-- I'm jumping ahead in the instructions to do login, so the navbar info below will need to be messed with -->
+						{% if user.is_authenticated %}
+						<li><a href="{% url 'about' %}"></li>
+						<!-- all my other navbar links go right here -->
+						{% else %}
+						<li><a href="{% url 'signup' %}">Sign Up</a></li>
+						<li><a href="{% url 'login' %}">Log In</a></li>
+						{% endif %}
 					</ul>
 				</div>
 			</nav>
@@ -32,7 +39,8 @@
 		<main class="container">{% block content %} {% endblock %}</main>
 		<footer class="page-footer">
 			<div class="right">
-				all rights reserved &copy; 2021 Brady Gerber. &nbsp; know your local representatives.
+				all rights reserved &copy; 2021 Brady Gerber. &nbsp; know your local
+				representatives.
 			</div>
 		</footer>
 	</body>
