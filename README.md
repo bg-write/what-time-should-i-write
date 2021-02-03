@@ -1,4 +1,4 @@
-# what-time-should-i-write
+# What Time Should I Write?
 
 The app listing the daily routines of well-known writers to inspire your creativity.
 
