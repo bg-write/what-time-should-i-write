@@ -45,7 +45,7 @@ TBD
 
 ## The Developer
 
-Brady Gerber: // [GitHub](https://github.com/bg-write), [LinkedIn](https://www.linkedin.com/in/brady-gerber/)
+Brady Gerber: [GitHub](https://github.com/bg-write), [LinkedIn](https://www.linkedin.com/in/brady-gerber/)
 ## Credits
 
 TBD

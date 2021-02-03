@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,6 +7,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>What Time Should I Write?</title>
+		<!-- Bootstrap will go below tite, above stye.css -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{% static 'css/style.css' %}"
+		/>
 	</head>
 	<body>
 		<header class="navbar-fixed">
@@ -24,7 +32,7 @@
 		<main class="container">{% block content %} {% endblock %}</main>
 		<footer class="page-footer">
 			<div class="right">
-				All Rights Reserved, &copy; 2021 Brady Gerber &nbsp;
+				all rights reserved &copy; 2021 Brady Gerber. &nbsp; know your local representatives.
 			</div>
 		</footer>
 	</body>
