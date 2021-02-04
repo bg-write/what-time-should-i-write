@@ -15,3 +15,19 @@ class Writer(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'writer_id': self.id})
 
+class Routine(models.Model):
+    dawn = models.TextField(max_length=1000)
+    sunrise = models.TextField(max_length=1000)
+    morning = models.TextField(max_length=1000)
+    noon = models.TextField(max_length=1000)
+    afternoon = models.TextField(max_length=1000)
+    evening = models.TextField(max_length=1000)
+    sunset = models.TextField(max_length=1000)
+    dusk = models.TextField(max_length=1000)
+    night = models.TextField(max_length=1000)
+    midnight = models.TextField(max_length=1000)
+    source = models.TextField(max_length=1000)
+
+    writer = models.ForeignKey(Writer, on_delete=models.CASCADE)
+
+
