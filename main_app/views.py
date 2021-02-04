@@ -16,6 +16,9 @@ def writers_index(request):
   writers = Writer.objects.all()
   return render(request, 'writers/index.html', { 'writers': writers })
 
+def writers_detail(request, writer_id):
+  writer = Writer.objects.get(id=writer_id)
+  return render(request, 'writers/detail.html', { 'writer': writer })
 
 def signup(request):
   error_message = ''

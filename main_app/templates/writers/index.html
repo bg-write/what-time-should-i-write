@@ -4,7 +4,7 @@
 
 {% for writer in writers %}
 <div>
-	<a href="/writers/{{ writer.id }}">
+	<a href="{% url 'detail' writer.id %}">
 		<div>
 			<span>{{ writer.name }}</span>
 			<p>Birth: {{ writer.birth }}</p>
