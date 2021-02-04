@@ -4,12 +4,14 @@
 
 {% for writer in writers %}
 <div>
-	<div>
-		<span>{{ writer.name }}</span>
-		<p>Birth: {{ writer.birth }}</p>
-		<p>Death: {{ writer.death }}</p>
-		<p>Notable Works: {{ writer.works }}</p>
-		<p>{{ writer.quote }}</p>
-	</div>
+	<a href="/writers/{{ writer.id }}">
+		<div>
+			<span>{{ writer.name }}</span>
+			<p>Birth: {{ writer.birth }}</p>
+			<p>Death: {{ writer.death }}</p>
+			<p>Notable Works: {{ writer.works }}</p>
+			<p>{{ writer.quote }}</p>
+		</div>
+	</a>
 </div>
 {% endfor %} {% endblock %}
