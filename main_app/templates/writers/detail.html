@@ -15,4 +15,51 @@
 	</div>
 </div>
 
+<div>
+<form action="{% url 'add_routine' writer.id %}" method="post">
+    {% csrf_token %}
+    {{ routine_form.as_p }}
+    <input type="submit" value="Add Routine">
+  </form>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Dawn</th>
+					<th>Sunrise</th>
+					<th>Morning</th>
+					<th>Noon</th>
+					<th>Afternoon</th>
+					<th>Evening</th>
+					<th>Sunset</th>
+					<th>Dusk</th>
+					<th>Night</th>
+					<th>Midnight</th>
+					<th>Source</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for routine in writer.routine_set.all %}
+				<tr>
+					<td>{{routine.title}}</td>
+					<td>{{routine.dawn}}</td>
+					<td>{{routine.sunrise}}</td>
+					<td>{{routine.morning}}</td>
+					<td>{{routine.noon}}</td>
+					<td>{{routine.afternoon}}</td>
+					<td>{{routine.evening}}</td>
+					<td>{{routine.sunset}}</td>
+					<td>{{routine.dusk}}</td>
+					<td>{{routine.night}}</td>
+					<td>{{routine.midnight}}</td>
+					<td>{{routine.source}}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
 {% endblock %}

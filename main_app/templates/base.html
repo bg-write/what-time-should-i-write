@@ -16,12 +16,12 @@
 		/>
 	</head>
 	<body>
-		<header>
+		<header class="navbar-fixed">
 			<nav>
-				<div>
-					<ul>
+				<div class="nav-wrapper">
+					<ul class="right">
 						{% if user.is_authenticated %}
-						<li><a href="/">Home</a></li>
+						<li><a href="/" class="left brand-logo">Home</a></li>
 						<li><a href="{% url 'about' %}">About</li>
 						<li><a href="{% url 'index' %}">Writers</a></li>
 						<!-- Will have to update the adding writer nav link; I want users to be able to upload a request for a writer to add. I do NOT want users to upload these writers themselves. I want all that to happen through the backend. -->
@@ -34,9 +34,9 @@
 				</div>
 			</nav>
 		</header>
-		<main>{% block content %} {% endblock %}</main>
-		<footer>
-			<div>
+		<main class="container">{% block content %} {% endblock %}</main>
+		<footer class="page-footer">
+			<div class="right">
 				All Rights Reserved &copy; 2021 Brady Gerber. &nbsp; Font and style inspired by the Paris Review. &nbsp; GitHub. &nbsp; Know Your Local
 				Representatives.
 			</div>
