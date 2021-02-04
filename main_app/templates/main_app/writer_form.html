@@ -1,0 +1,13 @@
+<!--
+	Will have to update; I want users to be able to upload a request for a writer to add. I do NOT want users to upload these writers themselves. I want all that to happen through the backend.
+-->
+
+{% extends 'base.html' %} {% block content %}
+<form action="" method="post">
+	{% csrf_token %}
+	<table>
+		{{ form.as_table }}
+	</table>
+	<input type="submit" value="Submit" />
+</form>
+{% endblock %}

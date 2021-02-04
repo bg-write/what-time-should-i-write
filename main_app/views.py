@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from .models import Writer
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+# Will have to update the 'CreateView' import; I want users to be able to upload a request for a writer to add. I do NOT want users to upload these writers themselves. I want all that to happen through the backend.
+from django.views.generic.edit import CreateView
+from .models import Writer
 
 def home(request):
   return render(request, 'home.html')
@@ -33,3 +35,8 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+	# Will have to update; I want users to be able to upload a request for a writer to add. I do NOT want users to upload these writers themselves. I want all that to happen through the backend.
+class WriterCreate(CreateView):
+  model = Writer
+  fields = '__all__'

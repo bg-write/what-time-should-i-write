@@ -23,7 +23,9 @@
 						{% if user.is_authenticated %}
 						<li><a href="/">Home</a></li>
 						<li><a href="{% url 'about' %}">About</li>
-						<li><a href="/writers">Writers</a></li>
+						<li><a href="{% url 'index' %}">Writers</a></li>
+						<!-- Will have to update the adding writer nav link; I want users to be able to upload a request for a writer to add. I do NOT want users to upload these writers themselves. I want all that to happen through the backend. -->
+						<li><a href="{% url 'writers_create' %}">Missing a Writer?</a></li>
 						{% else %}
 						<li><a href="{% url 'signup' %}">Sign Up</a></li>
 						<li><a href="{% url 'login' %}">Log In</a></li>
