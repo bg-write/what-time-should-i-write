@@ -21,12 +21,14 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def writers_index(request):
   writers = Writer.objects.all()
   return render(request, 'writers/index.html', { 
     'writers': writers
   })
 
+@login_required
 def writers_detail(request, writer_id):
   writer = Writer.objects.get(id=writer_id)
   routine_form = RoutineForm()
@@ -34,6 +36,7 @@ def writers_detail(request, writer_id):
     'writer': writer, 'routine_form': routine_form
   })
 
+@login_required
 def add_routine(request, writer_id):
   form = RoutineForm(request.POST)
   if form.is_valid():
@@ -57,7 +60,7 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 	# Will have to update; I want users to be able to upload a request for a writer to add. I do NOT want users to upload these writers themselves. I want all that to happen through the backend.
-class WriterCreate(CreateView):
+class WriterCreate(LoginRequiredMixin, CreateView):
   model = Writer
   fields = '__all__'
 
@@ -65,6 +68,7 @@ class WriterCreate(CreateView):
    form.instance.user = self.request.user
    return super().form_valid(form)
 
+@login_required
 def add_photo(request, writer_id):
   photo_file = request.FILES.get('photo-file', None)
   if photo_file:
