@@ -25,9 +25,13 @@
 		/>
 	</head>
 	<body>
-		<nav class="navbar navbar-light">
+		<header class="navbar navbar-light">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="/">
+				{% if user.is_authenticated %}
+				<a class="navbar-brand" href="{% url 'index' %}">
+				{% else %}
+				<a class="navbar-brand" href="{% url 'home' %}">
+				{% endif %}
 					<img
 						src="https://picsum.photos/200"
 						alt="lorem picsum"
@@ -38,52 +42,54 @@
 					What Time Should I Write?
 				</a>
 			</div>
-		</nav>
+		</header>
 
-		<ul class="nav justify-content-center">
-			{% if user.is_authenticated %} {% comment %}
-			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="/">Home</a>
-			</li>
-			{% endcomment %}
-			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="{% url 'about' %}"
-					>About</a
-				>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="{% url 'index' %}"
-					>Writers</a
-				>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="{% url 'logout' %}"
-					>Log Out</a
-				>
-			</li>
-			<!-- Will have to update the adding writer nav link; I want users to be able to upload a request for a writer to add. I do NOT want users to upload these writers themselves. I want all that to happen through the backend. -->
-			{% comment %}
-			<li class="nav-item">
-				<a
-					class="nav-link active"
-					aria-current="page"
-					href="{% url 'writers_create' %}"
-					>Want me to add a writer?</a
-				>
-			</li>
-			{% endcomment %} {% else %}
-			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="{% url 'signup' %}"
-					>Sign Up</a
-				>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="{% url 'login' %}"
-					>Log In</a
-				>
-			</li>
-			{% endif %}
-		</ul>
+		<nav>
+			<ul class="nav justify-content-center">
+				{% if user.is_authenticated %} {% comment %}
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="/">Home</a>
+				</li>
+				{% endcomment %}
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{% url 'about' %}"
+						>About</a
+					>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{% url 'index' %}"
+						>Writers</a
+					>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{% url 'logout' %}"
+						>Log Out</a
+					>
+				</li>
+				<!-- Will have to update the adding writer nav link; I want users to be able to upload a request for a writer to add. I do NOT want users to upload these writers themselves. I want all that to happen through the backend. -->
+				{% comment %}
+				<li class="nav-item">
+					<a
+						class="nav-link active"
+						aria-current="page"
+						href="{% url 'writers_create' %}"
+						>Want me to add a writer?</a
+					>
+				</li>
+				{% endcomment %} {% else %}
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{% url 'signup' %}"
+						>Sign Up</a
+					>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{% url 'login' %}"
+						>Log In</a
+					>
+				</li>
+				{% endif %}
+			</ul>
+		</nav>
 
 		<main class="container">{% block content %} {% endblock %}</main>
 

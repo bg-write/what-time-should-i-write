@@ -1,14 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 <hr>
 <div>
-<p>
-<a href="{% url 'index' %}">Return to all writers</a>
-</p>
+	<p>
+		<a href="{% url 'index' %}">Return to all writers</a>
+	</p>
 </div>
-<h1>{{ writer.name }}</h1>
 
 <div>
 	<div>
+		<h1>{{ writer.name }}</h1>
 		<p><b>Birth</b>: {{ writer.birth }}</p>
 		{% if writer.death > 0 %}
 		<p><b>Death</b>: {{ writer.death }}</p>
@@ -18,12 +18,15 @@
 		<p><b>Known For</b>: {{ writer.works }}</p>
 		<p><i>{{ writer.quote }}</i></p>
 	</div>
-	 {% for photo in writer.photo_set.all %}
-       <img class="responsive-img card-panel" src="{{photo.url}}" />
-       {% empty %}
-       <div class="card-panel teal-text center-align">No Photos Uploaded</div>
-       {% endfor %}
+	{% for photo in writer.photo_set.all %}
+	<div>
+    	<img src="{{photo.url}}" width="100%"/>
+    	{% empty %}
+    	<div>No Photos Uploaded</div>
+    {% endfor %}
+	</div>
 </div>
+
 <hr />
 
 <div class="col s6">
@@ -69,7 +72,7 @@
 					<td>{{routine.dusk}}</td>
 					<td>{{routine.night}}</td>
 					<td>{{routine.midnight}}</td>
-					<td>{{routine.source}}</td>
+					<td><a href="{{routine.source}}">source</a></td>
 				</tr>
 				{% endfor %}
 			</tbody>
