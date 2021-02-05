@@ -1,5 +1,6 @@
-{% extends 'base.html' %} {% block content %} {% for writer in writers %}
+{% extends 'base.html' %} {% block content %}
 <hr />
+{% for writer in writers %}
 <div>
 	<a href="{% url 'detail' writer.id %}">
 		<div>
