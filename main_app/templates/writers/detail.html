@@ -1,17 +1,22 @@
 {% extends 'base.html' %} {% block content %}
-
+<hr>
+<div>
+<p>
+<a href="{% url 'index' %}">Return to all writers</a>
+</p>
+</div>
 <h1>{{ writer.name }}</h1>
 
 <div>
 	<div>
-		<p>Birth: {{ writer.birth }}</p>
+		<p><b>Birth</b>: {{ writer.birth }}</p>
 		{% if writer.death > 0 %}
-		<p>Death: {{ writer.death }}</p>
+		<p><b>Death</b>: {{ writer.death }}</p>
 		{% else %}
-		<p>Death: N/A</p>
+		<p><b>Death</b>: N/A</p>
 		{% endif %}
-		<p>Notable Works: {{ writer.works }}</p>
-		<p>{{ writer.quote }}</p>
+		<p><b>Known For</b>: {{ writer.works }}</p>
+		<p><i>{{ writer.quote }}</i></p>
 	</div>
 	 {% for photo in writer.photo_set.all %}
        <img class="responsive-img card-panel" src="{{photo.url}}" />

@@ -41,10 +41,11 @@
 		</nav>
 
 		<ul class="nav justify-content-center">
-			{% if user.is_authenticated %}
+			{% if user.is_authenticated %} {% comment %}
 			<li class="nav-item">
 				<a class="nav-link active" aria-current="page" href="/">Home</a>
 			</li>
+			{% endcomment %}
 			<li class="nav-item">
 				<a class="nav-link active" aria-current="page" href="{% url 'about' %}"
 					>About</a
