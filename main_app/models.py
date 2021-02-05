@@ -15,8 +15,6 @@ class Writer(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'writer_id': self.id})
 
-writer = models.ForeignKey(Writer, on_delete=models.CASCADE)
-
 class Routine(models.Model):
     title = models.TextField(max_length=100)
     dawn = models.TextField(max_length=1000)
@@ -30,6 +28,8 @@ class Routine(models.Model):
     night = models.TextField(max_length=1000)
     midnight = models.TextField(max_length=1000)
     source = models.TextField(max_length=1000)
+
+    writer = models.ForeignKey(Writer, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
