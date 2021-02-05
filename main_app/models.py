@@ -36,3 +36,10 @@ class Routine(models.Model):
 
     class Meta:
         ordering = ['title']
+
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    writer = models.ForeignKey(Writer, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Photo for writer_id: {self.writer_id} @{self.url}"
