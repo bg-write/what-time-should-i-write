@@ -30,6 +30,9 @@ class Routine(models.Model):
     night = models.TextField(max_length=1000)
     midnight = models.TextField(max_length=1000)
     source = models.TextField(max_length=1000)
-    
+
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['title']

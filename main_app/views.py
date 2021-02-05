@@ -18,14 +18,14 @@ def about(request):
 def writers_index(request):
   writers = Writer.objects.all()
   return render(request, 'writers/index.html', { 
-    'writers': writers,
+    'writers': writers
   })
 
 def writers_detail(request, writer_id):
   writer = Writer.objects.get(id=writer_id)
   routine_form = RoutineForm()
   return render(request, 'writers/detail.html', {
-    'writer': writer, 'routine_form': routine_form,
+    'writer': writer, 'routine_form': routine_form
   })
 
 def add_routine(request, writer_id):

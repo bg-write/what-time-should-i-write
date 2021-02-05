@@ -7,8 +7,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>What Time Should I Write?</title>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"
+			rel="stylesheet"
+			type="text/css"
+		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
@@ -16,29 +25,70 @@
 		/>
 	</head>
 	<body>
-		<header class="navbar-fixed">
-			<nav>
-				<div class="nav-wrapper">
-					<ul class="right">
-						{% if user.is_authenticated %}
-						<li><a href="/" class="left brand-logo">Home</a></li>
-						<li><a href="{% url 'about' %}">About</li>
-						<li><a href="{% url 'index' %}">Writers</a></li>
-						<!-- Will have to update the adding writer nav link; I want users to be able to upload a request for a writer to add. I do NOT want users to upload these writers themselves. I want all that to happen through the backend. -->
-						<li><a href="{% url 'writers_create' %}">Missing a Writer?</a></li>
-						{% else %}
-						<li><a href="{% url 'signup' %}">Sign Up</a></li>
-						<li><a href="{% url 'login' %}">Log In</a></li>
-						{% endif %}
-					</ul>
-				</div>
-			</nav>
-		</header>
+		<nav class="navbar navbar-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/">
+					<img
+						src="https://picsum.photos/200"
+						alt="lorem picsum"
+						width="50"
+						height="50"
+						class="d-inline-block align-bottom"
+					/>
+					What Time Should I Write?
+				</a>
+			</div>
+		</nav>
+
+		<ul class="nav justify-content-center">
+			{% if user.is_authenticated %}
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="/">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="{% url 'about' %}"
+					>About</a
+				>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="{% url 'index' %}"
+					>Writers</a
+				>
+			</li>
+			<!-- Will have to update the adding writer nav link; I want users to be able to upload a request for a writer to add. I do NOT want users to upload these writers themselves. I want all that to happen through the backend. -->
+			{% comment %} <li class="nav-item">
+				<a
+					class="nav-link active"
+					aria-current="page"
+					href="{% url 'writers_create' %}"
+					>Want me to add a writer?</a
+				>
+			</li> {% endcomment %}
+			{% else %}
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="{% url 'signup' %}"
+					>Sign Up</a
+				>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="{% url 'login' %}"
+					>Log In</a
+				>
+			</li>
+			{% endif %}
+		</ul>
+
 		<main class="container">{% block content %} {% endblock %}</main>
-		<footer class="page-footer">
-			<div class="right">
-				All Rights Reserved &copy; 2021 Brady Gerber. &nbsp; Font and style inspired by the Paris Review. &nbsp; GitHub. &nbsp; Know Your Local
-				Representatives.
+
+		<footer class="navbar navbar-light">
+			<div class="container-fluid justify-content-center">
+				All Rights Reserved &copy; 2021.&ensp;Styling inspired by the&ensp;<a
+					href="https://www.theparisreview.org/"
+				>Paris Review</a
+				>.&ensp;
+				<a href="https://www.house.gov/representatives/find-your-representative"
+					>Find Your Local Representatives</a
+				>.
 			</div>
 		</footer>
 	</body>

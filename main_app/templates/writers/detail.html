@@ -14,15 +14,16 @@
 		<p>{{ writer.quote }}</p>
 	</div>
 </div>
+<hr />
 
-<div>
-<form action="{% url 'add_routine' writer.id %}" method="post">
+<div class="col s6">
+	{% comment %} <form action="{% url 'add_routine' writer.id %}" method="post">
     {% csrf_token %}
     {{ routine_form.as_p }}
     <input type="submit" value="Add Routine">
-  </form>
-
-		<table>
+  </form> 
+ <hr /> {% endcomment %}
+		<table class="striped">
 			<thead>
 				<tr>
 					<th>Title</th>
@@ -43,6 +44,11 @@
 				{% for routine in writer.routine_set.all %}
 				<tr>
 					<td>{{routine.title}}</td>
+					{% if routine.dawn == '0' %}
+					<p>Dawn: N/A</p>
+					{% else %}
+					<td>{{routine.dawn}}</td>
+					{% endif %}
 					<td>{{routine.dawn}}</td>
 					<td>{{routine.sunrise}}</td>
 					<td>{{routine.morning}}</td>
@@ -60,6 +66,5 @@
 		</table>
 	</div>
 </div>
-
 
 {% endblock %}
