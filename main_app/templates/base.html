@@ -55,16 +55,22 @@
 					>Writers</a
 				>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="{% url 'logout' %}"
+					>Log Out</a
+				>
+			</li>
 			<!-- Will have to update the adding writer nav link; I want users to be able to upload a request for a writer to add. I do NOT want users to upload these writers themselves. I want all that to happen through the backend. -->
-			{% comment %} <li class="nav-item">
+			{% comment %}
+			<li class="nav-item">
 				<a
 					class="nav-link active"
 					aria-current="page"
 					href="{% url 'writers_create' %}"
 					>Want me to add a writer?</a
 				>
-			</li> {% endcomment %}
-			{% else %}
+			</li>
+			{% endcomment %} {% else %}
 			<li class="nav-item">
 				<a class="nav-link active" aria-current="page" href="{% url 'signup' %}"
 					>Sign Up</a
@@ -84,7 +90,7 @@
 			<div class="container-fluid justify-content-center">
 				All Rights Reserved &copy; 2021.&ensp;Styling inspired by the&ensp;<a
 					href="https://www.theparisreview.org/"
-				>Paris Review</a
+					>Paris Review</a
 				>.&ensp;
 				<a href="https://www.house.gov/representatives/find-your-representative"
 					>Find Your Local Representatives</a

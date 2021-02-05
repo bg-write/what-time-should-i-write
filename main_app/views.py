@@ -61,6 +61,10 @@ class WriterCreate(CreateView):
   model = Writer
   fields = '__all__'
 
+  def form_valid(self, form):
+   form.instance.user = self.request.user
+   return super().form_valid(form)
+
 def add_photo(request, writer_id):
   photo_file = request.FILES.get('photo-file', None)
   if photo_file:
