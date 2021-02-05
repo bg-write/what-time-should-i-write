@@ -13,6 +13,11 @@
 		<p>Notable Works: {{ writer.works }}</p>
 		<p>{{ writer.quote }}</p>
 	</div>
+	 {% for photo in writer.photo_set.all %}
+       <img class="responsive-img card-panel" src="{{photo.url}}" />
+       {% empty %}
+       <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+       {% endfor %}
 </div>
 <hr />
 
