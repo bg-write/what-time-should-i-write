@@ -19,17 +19,17 @@ class Writer(models.Model):
 
 class Routine(models.Model):
     title = models.TextField(max_length=100)
-    dawn = models.TextField(max_length=1000)
-    sunrise = models.TextField(max_length=1000)
-    morning = models.TextField(max_length=1000)
-    noon = models.TextField(max_length=1000)
-    afternoon = models.TextField(max_length=1000)
-    evening = models.TextField(max_length=1000)
-    sunset = models.TextField(max_length=1000)
-    dusk = models.TextField(max_length=1000)
-    night = models.TextField(max_length=1000)
-    midnight = models.TextField(max_length=1000)
-    source = models.TextField(max_length=1000)
+    dawn = models.TextField(blank=True)
+    sunrise = models.TextField(blank=True)
+    morning = models.TextField(blank=True)
+    noon = models.TextField(blank=True)
+    afternoon = models.TextField(blank=True)
+    evening = models.TextField(blank=True)
+    sunset = models.TextField(blank=True)
+    dusk = models.TextField(blank=True)
+    night = models.TextField(blank=True)
+    midnight = models.TextField(blank=True)
+    source = models.TextField(blank=True)
     writer = models.ForeignKey(Writer, on_delete=models.CASCADE)
 
     def __str__(self):

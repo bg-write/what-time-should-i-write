@@ -40,20 +40,56 @@
 			<div>
 				<ul>
 					<u id="routine-title-text"><a href="{{routine.source}}">{{routine.title}}</a></u></li>
-					{% if routine.dawn == '0' %}
-					<li>''</br>
+					{% if routine.dawn == '' %}
 					{% else %}
 					<li>{{routine.dawn}}</li>
 					{% endif %}
+
+					{% if routine.sunrise == '' %}
+					{% else %}
 					<li>{{routine.sunrise}}</li>
+					{% endif %}
+
+					{% if routine.morning == '' %}
+					{% else %}
 					<li>{{routine.morning}}</li>
+					{% endif %}
+
+					{% if routine.noon == '' %}
+					{% else %}
 					<li>{{routine.noon}}</li>
+					{% endif %}
+
+					{% if routine.afternoon == '' %}
+					{% else %}
 					<li>{{routine.afternoon}}</li>
+					{% endif %}
+
+					{% if routine.evening == '' %}
+					{% else %}
 					<li>{{routine.evening}}</li>
+					{% endif %}
+
+					{% if routine.sunset == '' %}
+					{% else %}
 					<li>{{routine.sunset}}</li>
+					{% endif %}
+
+					{% if routine.dusk == '' %}
+					{% else %}
 					<li>{{routine.dusk}}</li>
+					{% endif %}
+
+					{% if routine.night == '' %}
+					{% else %}
 					<li>{{routine.night}}</li>
+					{% endif %}
+
+					{% if routine.midnight == '' %}
+					{% else %}
 					<li>{{routine.midnight}}</li>
+					{% endif %}
+
 				</ul>
 				{% endfor %}
 			</div>
