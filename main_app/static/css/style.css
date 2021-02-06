@@ -14,7 +14,8 @@ html {
 
 body {
 	background-color: #fff;
-	font-family: "garamond-premier-pro", Georgia, Cambria, Times New Roman, Times, serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+	font-family: 'garamond-premier-pro', Georgia, Cambria, Times New Roman, Times,
+		serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 	display: flex;
 	min-height: 100vh;
@@ -30,9 +31,27 @@ footer.page-footer {
 	text-align: right;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
 /*--------------------CLASSES (.)--------------------*/
 
-/*--------------------IDS (#)--------------------*/
-/*--------------------XXX.XXX--------------------*/
+/*--------------------IDS (#)------------------------*/
+/*--------------------base.html----------------------*/
+#header-title {
+	/* "What Time Should I Write" */
+	font-family: 'Caveat', cursive;
+	font-size: 2rem;
+	color: black;
+}
 
-/*--------------------MEDIA QUERIES--------------------*/
+/*--------------------index.html----------------------*/
+
+
+/*--------------------MEDIA QUERIES------------------*/

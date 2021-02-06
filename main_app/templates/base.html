@@ -13,11 +13,8 @@
 			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
 			crossorigin="anonymous"
 		/>
-		<link
-			href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"
-			rel="stylesheet"
-			type="text/css"
-		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
 		<link
 			rel="stylesheet"
 			type="text/css"
@@ -26,15 +23,15 @@
 	</head>
 	<body>
 		<header class="navbar navbar-light">
-			<div class="container-fluid">
+			<div class="container">
 				{% if user.is_authenticated %}
-				<a class="navbar-brand" href="{% url 'index' %}">
+				<a id="header-title" href="{% url 'index' %}">
 				{% else %}
-				<a class="navbar-brand" href="{% url 'home' %}">
+				<a id="header-title" href="{% url 'home' %}">
 				{% endif %}
 					<img
-						src="https://picsum.photos/200"
-						alt="lorem picsum"
+						src="https://i.imgur.com/1DAKbpo.jpg"
+						alt="snoopy writing"
 						width="50"
 						height="50"
 						class="d-inline-block align-bottom"
