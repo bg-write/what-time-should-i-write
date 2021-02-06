@@ -6,7 +6,7 @@
 	</p>
 </div>
 
-<div>
+<div class="container">
 	<h1>{{ writer.name }}</h1>
 </div>
 
@@ -16,11 +16,12 @@
 			<div>
 				{% for photo in writer.photo_set.all %}
 				<div>
-					<img src="{{photo.url}}" width="100%" />
+					<img id="writer-img" src="{{photo.url}}" width="100%" />
 					{% empty %}
 					<div>No Photos Uploaded</div>
 					{% endfor %}
 				</div>
+				
 				<div>
 					<p><b>Birth</b>: {{ writer.birth }}</p>
 					{% if writer.death > 0 %}
@@ -34,17 +35,16 @@
 			</div>
 		</div>
 
-		<div class="col">
+		<div class="col" id="routine-text">
 			{% for routine in writer.routine_set.all %}
 			<div>
 				<ul>
-					<li><a href="{{routine.source}}">{{routine.title}}</a></li>
+					<u id="routine-title-text">{{routine.title}}</u> (<a href="{{routine.source}}">source</a>)</li>
 					{% if routine.dawn == '0' %}
-					<li>Dawn: N/A</li>
+					<li>''</br>
 					{% else %}
 					<li>{{routine.dawn}}</li>
 					{% endif %}
-					<li>{{routine.dawn}}</li>
 					<li>{{routine.sunrise}}</li>
 					<li>{{routine.morning}}</li>
 					<li>{{routine.noon}}</li>
