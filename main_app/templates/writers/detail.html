@@ -39,7 +39,7 @@
 			{% for routine in writer.routine_set.all %}
 			<div>
 				<ul>
-					<u id="routine-title-text">{{routine.title}}</u> (<a href="{{routine.source}}">source</a>)</li>
+					<u id="routine-title-text"><a href="{{routine.source}}">{{routine.title}}</a></u></li>
 					{% if routine.dawn == '0' %}
 					<li>''</br>
 					{% else %}
