@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<hr>
+<hr />
 <div>
 	<p>
 		<a href="{% url 'index' %}">Return to all writers</a>
@@ -7,76 +7,58 @@
 </div>
 
 <div>
-	<div>
-		<h1>{{ writer.name }}</h1>
-		<p><b>Birth</b>: {{ writer.birth }}</p>
-		{% if writer.death > 0 %}
-		<p><b>Death</b>: {{ writer.death }}</p>
-		{% else %}
-		<p><b>Death</b>: N/A</p>
-		{% endif %}
-		<p><b>Known For</b>: {{ writer.works }}</p>
-		<p><i>{{ writer.quote }}</i></p>
-	</div>
-	{% for photo in writer.photo_set.all %}
-	<div>
-    	<img src="{{photo.url}}" width="100%"/>
-    	{% empty %}
-    	<div>No Photos Uploaded</div>
-    {% endfor %}
-	</div>
+	<h1>{{ writer.name }}</h1>
 </div>
 
-<hr />
-
-<div class="col s6">
-	{% comment %} <form action="{% url 'add_routine' writer.id %}" method="post">
-    {% csrf_token %}
-    {{ routine_form.as_p }}
-    <input type="submit" value="Add Routine">
-  </form> 
- <hr /> {% endcomment %}
-		<table class="striped">
-			<thead>
-				<tr>
-					<th>Title</th>
-					<th>Dawn</th>
-					<th>Sunrise</th>
-					<th>Morning</th>
-					<th>Noon</th>
-					<th>Afternoon</th>
-					<th>Evening</th>
-					<th>Sunset</th>
-					<th>Dusk</th>
-					<th>Night</th>
-					<th>Midnight</th>
-					<th>Source</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for routine in writer.routine_set.all %}
-				<tr>
-					<td>{{routine.title}}</td>
-					{% if routine.dawn == '0' %}
-					<p>Dawn: N/A</p>
+<div class="container">
+	<div class="row align-items-start">
+		<div class="col">
+			<div>
+				{% for photo in writer.photo_set.all %}
+				<div>
+					<img src="{{photo.url}}" width="100%" />
+					{% empty %}
+					<div>No Photos Uploaded</div>
+					{% endfor %}
+				</div>
+				<div>
+					<p><b>Birth</b>: {{ writer.birth }}</p>
+					{% if writer.death > 0 %}
+					<p><b>Death</b>: {{ writer.death }}</p>
 					{% else %}
-					<td>{{routine.dawn}}</td>
+					<p><b>Death</b>: N/A</p>
 					{% endif %}
-					<td>{{routine.dawn}}</td>
-					<td>{{routine.sunrise}}</td>
-					<td>{{routine.morning}}</td>
-					<td>{{routine.noon}}</td>
-					<td>{{routine.afternoon}}</td>
-					<td>{{routine.evening}}</td>
-					<td>{{routine.sunset}}</td>
-					<td>{{routine.dusk}}</td>
-					<td>{{routine.night}}</td>
-					<td>{{routine.midnight}}</td>
-					<td><a href="{{routine.source}}">source</a></td>
-				</tr>
+					<p><b>Known For</b>: {{ writer.works }}</p>
+					<p><i>{{ writer.quote }}</i></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col">
+			{% for routine in writer.routine_set.all %}
+			<div>
+				<ul>
+					<li><a href="{{routine.source}}">{{routine.title}}</a></li>
+					{% if routine.dawn == '0' %}
+					<li>Dawn: N/A</li>
+					{% else %}
+					<li>{{routine.dawn}}</li>
+					{% endif %}
+					<li>{{routine.dawn}}</li>
+					<li>{{routine.sunrise}}</li>
+					<li>{{routine.morning}}</li>
+					<li>{{routine.noon}}</li>
+					<li>{{routine.afternoon}}</li>
+					<li>{{routine.evening}}</li>
+					<li>{{routine.sunset}}</li>
+					<li>{{routine.dusk}}</li>
+					<li>{{routine.night}}</li>
+					<li>{{routine.midnight}}</li>
+				</ul>
 				{% endfor %}
-			</tbody>
-		</table>
+			</div>
+		</div>
+		<hr />
 	</div>
 </div>
 
