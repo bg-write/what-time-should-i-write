@@ -84,14 +84,15 @@ a:hover {
 }
 
 /*--------------------MEDIA QUERIES------------------*/
+/* As of now working find with Bootstrap defaults, below templates are for future use just in case
 /*----TABLETS----*/
-@media only screen and (min-width: 43em) {
-}
+/* @media only screen and (min-width: 43em) {
+} */
 
 /*----DESKTOP (smaller)----*/
-@media only screen and (min-width: 62em) {
-}
+/* @media only screen and (min-width: 62em) {
+} */
 
 /*----DESKTOP (larger)----*/
-@media only screen and (min-width: 82em) {
-}
+/* @media only screen and (min-width: 82em) {
+} */
