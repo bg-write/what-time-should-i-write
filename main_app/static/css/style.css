@@ -27,7 +27,7 @@ main {
 }
 
 footer {
-	padding-bottom: 0.5rem;
+	padding: 0 3rem 0.5rem 3rem;
 }
 
 a {
@@ -40,9 +40,10 @@ a:hover {
 }
 
 /*--------------------CLASSES (.)--------------------*/
+/*----All taken from Bootstrap defaults----*/
 
 /*--------------------IDS (#)------------------------*/
-/*--------------------base.html----------------------*/
+/*----base.html----*/
 #header-title {
 	/* "What Time Should I Write" */
 	font-family: 'Caveat', cursive;
@@ -50,8 +51,12 @@ a:hover {
 	color: black;
 }
 
-/*--------------------detail.html----------------------*/
+/*----detail.html----*/
 #writer-img {
+	filter: grayscale();
+}
+
+#snoopy-img {
 	filter: grayscale();
 }
 
@@ -79,3 +84,14 @@ a:hover {
 }
 
 /*--------------------MEDIA QUERIES------------------*/
+/*----TABLETS----*/
+@media only screen and (min-width: 43em) {
+}
+
+/*----DESKTOP (smaller)----*/
+@media only screen and (min-width: 62em) {
+}
+
+/*----DESKTOP (larger)----*/
+@media only screen and (min-width: 82em) {
+}
