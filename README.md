@@ -4,7 +4,7 @@ The app listing the daily routines of well-known writers to inspire your creativ
 
 ## Getting Started
 
-Deploy the app: TBD
+Deploy the app: https://what-time-should-i-write.herokuapp.com/
 
 Trello board: https://trello.com/b/akFCMLq9/what-time-should-i-write
 
