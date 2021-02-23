@@ -26,7 +26,7 @@ Trello board: https://trello.com/b/akFCMLq9/what-time-should-i-write
 
 - Python
 - Django
-- PostreSQL
+- PostgreSQL
 - Amazon AWS
 - Trello
 - Heroku
