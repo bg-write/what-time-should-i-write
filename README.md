@@ -1,12 +1,12 @@
 # What Time Should I Write?
 
-The website listing the daily routines of well-known writers to inspire your creativity. Built with Python, Django, and Amazon AWS. Inspired by the Paris Review's The Art of Fiction series and an outcome of Brady Gerber's weekly newsletter studying the art of creativity.
+The online reference listing the daily routines of well-known writers (Ernest Hemingway, Haruki Murakami, Susan Sontag, and more) to inspire your creativity. Built with Python, Django, PostgreSQL, and Amazon AWS S3. Inspired by the Paris Review's The Art of Fiction series and my weekly newsletter studying the art of creativity.
 
 ## Getting Started
 
 Deploy the app: https://what-time-should-i-write.herokuapp.com/
 
-Trello board: https://trello.com/b/akFCMLq9/what-time-should-i-write
+Run local (in your terminal): "> python3 manage.py runserver"
 
 ## Screenshots
 
@@ -26,8 +26,8 @@ Trello board: https://trello.com/b/akFCMLq9/what-time-should-i-write
 
 - Python
 - Django
-- PostreSQL
-- Amazon AWS
+- PostgreSQL
+- Amazon AWS S3
 - Trello
 - Heroku
 - JavaScript
@@ -37,8 +37,9 @@ Trello board: https://trello.com/b/akFCMLq9/what-time-should-i-write
 - Git
 - Image Resizer
 - Visual Studio Code
-- Google Chrome DevTools (and, like, Google)
-- Bootstap
+- Google Chrome DevTools
+- Google
+- Bootstrap
 - Coffee
 - Naps
 
